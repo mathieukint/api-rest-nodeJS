@@ -13,10 +13,10 @@ module.exports = (sequelize, DataTypes) => {
           }
       })
     }
-  };
+  }
 
   Message.init({
-    user_id: DataTypes.INTEGER,
+    // userId: DataTypes.INTEGER,
     message_title: DataTypes.STRING,
     message_content: DataTypes.STRING,
     message_attachment: DataTypes.STRING,

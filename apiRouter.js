@@ -1,6 +1,7 @@
 const express = require('express');
 const usersControler = require('./routes/usersControler');
-
+const messagesControler = require('./routes/messagesControler');
+const likesControler = require('./routes/likesControler');
 
 exports.router = (function() {
 
@@ -14,6 +15,8 @@ exports.router = (function() {
     apiRouter.route('./messages/').get(messagesControler.listMessage);
     apiRouter.route('./messages/new/').post(messagesControler.createMessage);
     
+    apiRouter.route('./messages/:messageId/vote/like').get(likesControler.listLike);
+    apiRouter.route('./messages/:messageId/vote/dislike').post(likesControler.createLike);
 
 
     return apiRouter;

@@ -4,6 +4,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const apiRouter = require('./apiRouter').router;
+const nodemon = require('nodemon');
 
 /**
  * Instanciation
@@ -30,7 +31,8 @@ server.use('./api/', apiRouter);
 /**
  * CallBack
  */
-server.listen(8000, function() {
-    console.log('Serveur en ecoute');
+const PORT = 8000;
+server.listen(PORT, function() {
+    console.log('Serveur en ecoute sur le port '+ PORT + '\n'+Date());
 });
 
